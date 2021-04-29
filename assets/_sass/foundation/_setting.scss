@@ -1,0 +1,78 @@
+@charset 'UTF-8';
+
+// -----------------------------------
+//  Layout Settings
+//------------------------------------
+
+// Contentの幅
+$content-width: 1200px !default;
+$slim-content-width: 960px !default;
+
+// ブレークポイント
+$breakpoints: (
+  'sp': 480px,
+  'tab': 768px,
+  'lap': 1024px,
+  'desk': 1200px,
+  'wide': 1600px,
+) !default;
+
+//====================================
+//  Color Setings
+//====================================
+
+// ベースカラー
+$base-color: #fff;
+
+// メインカラー
+$main-color: #fff;
+
+// サブカラー
+$sub-color: #fff;
+
+//　アクセントカラー
+$accent-color: #fff;
+
+//　タグカラー
+$tag-color: #fff;
+
+// テキストカラー
+$primary-text-color: #000;
+
+// セカンダリーカラー
+$secondary-text-color: #fff;
+
+// テキストエリアカラー
+$text-area-color: #fff;
+
+// コードブロックカラー
+$code-block-color: #fff;
+
+// 目次エリアカラー
+$toc-area-color: #fff;
+
+// アイコンホバーカラー
+$icon-hover-color: #fff;
+
+// 補足などの色
+$hint-text-color: #fff;
+
+// 訪問済みリンクカラー
+$visited-text-color: #fff;
+
+// ロールオーバーーカラー
+$hover-text-color: #fff;
+
+//====================================
+//  Typeface
+//====================================
+
+//$font-set-primary : set-font-family(1) !default;
+$font-set-primary: 'Noto Sans JP', '游ゴシック', 'Yu Gothic', '游ゴシック体',
+  'YuGothic', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Meiryo UI',
+  'メイリオ', meiryo, sans-serif;
+$font-set-en: 'Roboto', arial, sans-serif;
+//  HTML用
+//  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700|Quicksand:400,700&display=swap&subset=japanese">
+
+$base-font-size: 16px;

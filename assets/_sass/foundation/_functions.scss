@@ -1,0 +1,4 @@
+// 関数の登録
+@function set-size($size, $base-font-size: 16px) {
+  @return ($size / $base-font-size) + rem;
+}
