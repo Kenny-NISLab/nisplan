@@ -1,5 +1,18 @@
 # NISPLAN
 
+## How To Use Repository
+
+1. Fork and Clone
+2. `git remote add upstream https://github.com/Kenny-NISLab/nisplan.git`
+3. `git pull upstream main`
+
+## Create `.env` File
+
+```.env
+API_URL=
+API_KEY=
+```
+
 ## Build Setup
 
 ```bash
@@ -10,21 +23,6 @@ $ yarn install
 $ yarn dev
 
 # build for production and launch server
-$ yarn build
-$ yarn start
+# $ yarn build
+# $ yarn start
 ```
-
-## Create `.env` File
-
-```.env
-API_URL=
-API_KEY=
-```
-
-## How To Use Repository
-
-### 1. Fork and Clone
-
-### 2. `git remote add upstream https://github.com/Kenny-NISLab/nisplan.git`
-
-### 3. `git pull upstream main`
