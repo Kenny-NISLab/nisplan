@@ -1,5 +1,7 @@
 <template>
-  <h1>NISPLAN</h1>
+  <div>
+    <Header />
+  </div>
 </template>
 
 <script>
