@@ -1,6 +1,8 @@
 <template>
-  <header class="flex justify-around items-center h-16 container mx-auto">
-    <BackPage v-show="!defaultLayout" />
+  <header class="flex justify-between items-center h-16 container mx-auto">
+    <h1>
+      <BackPage v-show="!defaultLayout" />
+    </h1>
     <h1>
       <img
         src="@/assets/images/NISPLAN.png"
@@ -8,7 +10,9 @@
         class="w-48 max-w-full"
       />
     </h1>
-    <Submit v-show="submitLayout" />
+    <h1>
+      <Submit v-show="submitLayout" />
+    </h1>
   </header>
 </template>
 
@@ -26,11 +30,11 @@ export default {
   methods: {
     selectLayout() {
       this.$route.name === 'index'
-        ? (this.defaultLayout = false)
+        ? (this.defaultLayout = true)
         : (this.defaultLayout = false)
       this.$route.name === 'dates'
         ? (this.submitLayout = true)
-        : (this.submitLayout = true)
+        : (this.submitLayout = false)
     },
   },
 }
