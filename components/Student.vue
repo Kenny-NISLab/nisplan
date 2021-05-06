@@ -1,10 +1,12 @@
 <template>
   <article>
-    <div class="inline-block rounded-full bg-gray-300 pr-5 h-16">
+    <div
+      class="inline-block mb-6 rounded-full bg-gray-300 pr-5 h-8 line-height-username"
+    >
       <img
         :src="avatar"
         :alt="name + 'のプロフィール画像'"
-        class="w-16 md:w-24 h-16 md:h-24"
+        class="rounded-full float-left h-full"
       />
       <span class="ml-3">{{ name }}</span>
     </div>
@@ -22,7 +24,7 @@ export default {
     avatar: {
       type: String,
       required: true,
-      default: '@/assets/images/defaultAvatar.jpg',
+      default: require('@/assets/images/defaultAvatar.jpg'),
     },
     index: {
       type: Number,
@@ -37,3 +39,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.line-height-username {
+  line-height: 2rem;
+}
+</style>
