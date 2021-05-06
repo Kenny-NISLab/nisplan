@@ -1,5 +1,5 @@
 <template>
-  <header class="flex justify-around p-4">
+  <header class="flex justify-around items-center h-16 container mx-auto">
     <BackPage v-show="!defaultLayout" />
     <h1>
       <img
@@ -25,16 +25,12 @@ export default {
   },
   methods: {
     selectLayout() {
-      if (this.$route.name === 'index') {
-        this.defaultLayout = true
-      } else {
-        this.defaultLayout = false
-      }
-      if (this.$route.name === 'dates') {
-        this.submitLayout = true
-      } else {
-        this.submitLayout = false
-      }
+      this.$route.name === 'index'
+        ? (this.defaultLayout = false)
+        : (this.defaultLayout = false)
+      this.$route.name === 'dates'
+        ? (this.submitLayout = true)
+        : (this.submitLayout = true)
     },
   },
 }
