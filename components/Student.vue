@@ -1,14 +1,14 @@
 <template>
   <article>
     <div
-      class="inline-block mb-6 rounded-full bg-gray-300 pr-5 h-8 line-height-username"
+      class="inline-block mb-4 rounded-full bg-gray-300 pr-7 h-8 line-height-username"
     >
       <img
         :src="avatar"
         :alt="name + 'のプロフィール画像'"
         class="rounded-full float-left h-full"
       />
-      <span class="ml-3">{{ name }}</span>
+      <span class="ml-2">{{ name }}</span>
     </div>
   </article>
 </template>

@@ -1,8 +1,10 @@
 <template>
   <div class="bg-gray-300">
-    <Header />
-    <WeekCalendar />
-    <main class="bg-white w-full mx-auto rounded-2xl">
+    <div class="sticky top-0">
+      <Header />
+      <WeekCalendar />
+    </div>
+    <main class="bg-white w-full mx-auto rounded-2xl overflow-scroll">
       <Nuxt />
     </main>
   </div>
