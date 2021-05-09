@@ -1,5 +1,11 @@
 <template>
-  <h3></h3>
+  <section class="h-14">
+    <div class="flex justify-around mx-auto mb-1">
+      <div v-for="day in Calendar" :key="day">
+        <Date :date="day.dates" :day="day.days" />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
