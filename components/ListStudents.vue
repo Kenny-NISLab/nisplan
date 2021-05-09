@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div v-for="day in Calendar" :key="day">
+    <div v-for="(day, week) in Calendar" :key="week">
       <div class="flex justify-around py-8 text-3xl">
         <h2 :id="day.days">
           <strong>{{ day.months }}/{{ day.dates }} {{ day.days }}</strong>
