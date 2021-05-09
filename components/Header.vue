@@ -1,7 +1,7 @@
 <template>
   <header class="flex justify-between items-center h-16 container mx-auto">
     <h1>
-      <BackPage v-show="!defaultLayout" />
+      <BackPage v-show="!defaultLayout" :route="$route.path" />
     </h1>
     <h1>
       <img
@@ -24,12 +24,12 @@ export default {
       submitLayout: true,
     }
   },
-  mounted() {
+  updated() {
     this.selectLayout()
   },
   methods: {
     selectLayout() {
-      this.$route.name === 'index'
+      this.$route.path === '/'
         ? (this.defaultLayout = true)
         : (this.defaultLayout = false)
       this.$route.name === 'dates'
