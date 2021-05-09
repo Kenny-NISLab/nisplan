@@ -45,9 +45,10 @@ export const actions = {
   },
   getCalendar({ commit }) {
     const Array = []
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 7; i++) {
       Array[i] = {
-        dates: this.$moment().add(i, 'days').format('MM/DD'),
+        months: parseInt(this.$moment().add(i, 'days').format('MM'), 10),
+        dates: parseInt(this.$moment().add(i, 'days').format('DD'), 10),
         days: this.$moment().add(i, 'days').format('ddd'),
       }
     }
