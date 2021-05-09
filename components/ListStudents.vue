@@ -1,13 +1,13 @@
 <template>
   <section>
     <div v-for="day in Calendar" :key="day">
-      <div class="flex justify-around pt-8 text-3xl">
-        <h2>
-          <strong>{{ day.dates }} {{ day.days }}</strong>
+      <div class="flex justify-around py-8 text-3xl">
+        <h2 :id="day.days">
+          <strong>{{ day.months }}/{{ day.dates }} {{ day.days }}</strong>
         </h2>
         <h2><strong>☀️27℃</strong></h2>
       </div>
-      <div class="flex justify-around flex-wrap w-9/12 mx-auto">
+      <div class="flex justify-around flex-wrap w-11/12 mx-auto">
         <template v-for="(student, index) in Students">
           <Student
             :id="student.id"

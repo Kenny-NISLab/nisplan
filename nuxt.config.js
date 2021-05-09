@@ -164,9 +164,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  moment: {
-    locales: ['ja'],
-  },
+  moment: {},
   // loading: '~/components/Loading.vue',
 
   publicRuntimeConfig: {
