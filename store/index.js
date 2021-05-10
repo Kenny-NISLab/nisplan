@@ -47,9 +47,11 @@ export const actions = {
     const Array = []
     for (let i = 0; i < 7; i++) {
       Array[i] = {
-        months: parseInt(this.$moment().add(i, 'days').format('MM'), 10),
-        dates: parseInt(this.$moment().add(i, 'days').format('DD'), 10),
+        year: this.$moment().add(i, 'days').format('YY'),
+        months: this.$moment().add(i, 'days').format('MM'),
+        dates: this.$moment().add(i, 'days').format('DD'),
         days: this.$moment().add(i, 'days').format('ddd'),
+        schedule: this.$moment().add(i, 'days').format('YYYY-MM-DD'),
       }
     }
     commit('setCalendar', Array)
