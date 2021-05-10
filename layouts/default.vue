@@ -2,7 +2,6 @@
   <div class="bg-gray-300 min-h-screen">
     <div class="sticky top-0 bg-gray-300">
       <Header />
-      <WeekCalendar />
     </div>
     <main>
       <Nuxt />
@@ -10,11 +9,4 @@
   </div>
 </template>
 
-<script>
-export default {
-  mounted() {
-    this.$store.dispatch('getStudents')
-    this.$store.dispatch('getCalendar')
-  },
-}
-</script>
+<script></script>
