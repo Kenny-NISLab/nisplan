@@ -1,7 +1,7 @@
 <template>
   <header class="flex justify-between items-center h-16 container mx-auto">
     <h1>
-      <BackPage v-show="!defaultLayout" :route="$route.path" />
+      <BackPage v-show="!defaultLayout" />
     </h1>
     <h1>
       <img
