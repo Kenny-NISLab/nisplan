@@ -1,11 +1,11 @@
 <template>
-  <div class="w-full h-screen">
-    <div class="bg-gray-300">
-      <WeekCalendar />
+  <div class="w-full h-full fixed">
+    <div class="sticky top-auto bg-gray-300">
+      <TitleMessage message="When will you come?" />
     </div>
-    <div class="bg-white w-full mx-auto rounded-2xl h-full">
-      <PostIcon class="fixed bottom-0 right-0 p-8" />
-      <ListStudents />
+    <div class="bg-white w-full h-full mx-auto rounded-2xl">
+      <StudentIcon />
+      <ListDates />
     </div>
   </div>
 </template>

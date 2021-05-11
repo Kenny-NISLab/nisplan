@@ -1,6 +1,6 @@
 <template>
-  <section class="h-14">
-    <div class="flex justify-around mx-auto mb-1">
+  <section class="h-16">
+    <div class="flex justify-around mx-auto mb-2">
       <div v-for="(day, index) in Calendar" :key="index">
         <Date :date="day.dates" :day="day.days" />
       </div>

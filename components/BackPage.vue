@@ -1,24 +1,18 @@
 <template>
-  <nuxt-link :to="prevRoute">
+  <nuxt-link :to="getRoute">
     <LeftArrowSVG />
   </nuxt-link>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      prevRoute: '',
-    }
-  },
-  mounted() {
-    this.getRoute()
-  },
-  methods: {
+  computed: {
     getRoute() {
-      this.$route.path === '/register'
-        ? (this.prevRoute = '/')
-        : (this.prevRoute = '/register')
+      let prevRoute = ''
+      this.$store.state.currentPage === '/register'
+        ? (prevRoute = '/')
+        : (prevRoute = '/register')
+      return prevRoute
     },
   },
 }
