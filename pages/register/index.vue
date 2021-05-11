@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div class="sticky top-0 bg-gray-300">
+  <div class="w-full h-full fixed">
+    <div class="sticky top-auto bg-gray-300">
       <TitleMessage message="Who are you?" />
     </div>
-    <div class="bg-white w-full mx-auto h-screen rounded-2xl z-0">
+    <div class="bg-white w-full h-full mx-auto rounded-2xl">
       <SelectStudents />
     </div>
   </div>
@@ -14,6 +14,7 @@ export default {
   mounted() {
     this.$store.dispatch('getStudents')
     this.$store.dispatch('getCalendar')
+    this.$store.commit('setCurrentPage', this.$route.path)
   },
 }
 </script>

@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div class="sticky top-0 bg-gray-300">
+  <div class="w-full h-full fixed">
+    <div class="sticky top-auto bg-gray-300">
       <TitleMessage message="When will you come?" />
     </div>
-    <div class="bg-white w-full mx-auto h-screen rounded-2xl">
-      <StudentIcon class="mb-3" />
+    <div class="bg-white w-full h-full mx-auto rounded-2xl">
+      <StudentIcon />
       <ListDates />
     </div>
   </div>
@@ -15,6 +15,7 @@ export default {
   mounted() {
     this.$store.dispatch('getStudents')
     this.$store.dispatch('getCalendar')
+    this.$store.commit('setCurrentPage', this.$route.path)
   },
 }
 </script>
