@@ -1,6 +1,8 @@
 export const state = () => ({
   students: [],
   calendar: [],
+  reserved: [],
+  currentPage: '',
 })
 
 export const mutations = {
@@ -10,16 +12,13 @@ export const mutations = {
   setCalendar(state, calendar) {
     state.calendar = calendar
   },
+  setReserved(state, reserve) {
+    state.reserved = reserve
+  },
+  setCurrentPage(state, currentPage) {
+    state.currentPage = currentPage
+  },
 }
-
-// export const getters = {
-//   getStudents(state) {
-//     return state.students.length
-//   },
-//   getCalendar(state) {
-//     return state.updatedWeek.Items
-//   },
-// }
 
 export const actions = {
   async getStudents({ commit, $config }) {
