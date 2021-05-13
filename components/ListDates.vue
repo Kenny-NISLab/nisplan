@@ -1,7 +1,7 @@
 <template>
   <div class="text-center">
     <div v-for="(day, index) in Calendar" :key="index">
-      <CheckDate :plans="plans" :schedule="day.schedule" :index="index" />
+      <CheckDate :schedule="day.schedule" :index="index" />
     </div>
   </div>
 </template>
@@ -35,6 +35,7 @@ export default {
       this.reserved.forEach((isSchedule, index) => {
         this.plans[isSchedule] = isSchedule
       })
+      this.$store.commit('setPlan', this.plans)
     },
   },
 }

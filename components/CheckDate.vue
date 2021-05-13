@@ -15,10 +15,6 @@
 <script>
 export default {
   props: {
-    plans: {
-      type: Object,
-      required: true,
-    },
     schedule: {
       type: String,
       required: true,
@@ -35,8 +31,13 @@ export default {
       checked: false,
     }
   },
+  computed: {
+    getPlan() {
+      return this.$store.state.plans
+    },
+  },
   mounted() {
-    this.isScheduled(this.plans, this.schedule)
+    this.isScheduled(this.getPlan, this.schedule)
   },
   methods: {
     isScheduled(plans, schedule) {

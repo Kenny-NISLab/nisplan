@@ -3,6 +3,7 @@ export const state = () => ({
   Dayschedule: [],
   calendar: [],
   reserved: [],
+  plans: [],
   currentPage: '',
 })
 
@@ -41,6 +42,9 @@ export const mutations = {
   setCurrentPage(state, currentPage) {
     state.currentPage = currentPage
   },
+  setPlan(state, plans) {
+    state.plans = plans
+  },
 }
 
 export const actions = {
@@ -61,7 +65,7 @@ export const actions = {
             j_first_name: 'Found',
             avatar: require('@/assets/images/defaultAvatar.jpg'),
             is_stay: false,
-            schedule: ['2021-05-13'],
+            schedule: [],
           })
         )
       )
