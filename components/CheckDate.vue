@@ -1,17 +1,24 @@
 <template>
   <div class="py-3">
-    <input
-      type="checkbox"
-      :v-model="isChecked"
-      @change="Checkflag(isChecked, schedule, index)"
-    />
-    <span class="text-xl">{{ schedule }}</span>
+    <label>
+      <input
+        type="checkbox"
+        :checked="checked"
+        :v-model="isChecked"
+        @change="Checkflag(isChecked, schedule, index)"
+      />
+      <span class="text-xl">{{ schedule }}</span>
+    </label>
   </div>
 </template>
 
 <script>
 export default {
   props: {
+    plans: {
+      type: Object,
+      required: true,
+    },
     schedule: {
       type: String,
       required: true,
@@ -25,13 +32,21 @@ export default {
   data() {
     return {
       isChecked: false,
+      checked: false,
     }
   },
+  mounted() {
+    this.isScheduled(this.plans, this.schedule)
+  },
   methods: {
+    isScheduled(plans, schedule) {
+      if (plans[schedule]) this.checked = true
+      console.log(plans)
+    },
     Checkflag(isChecked, schedule, index) {
       if (isChecked) {
         this.isChecked = false
-        this.deleteSchedule(index)
+        this.deleteSchedule(schedule, index)
       } else {
         this.isChecked = true
         this.setSchedule(schedule, index)
@@ -40,8 +55,8 @@ export default {
     setSchedule(schedule, index) {
       this.$store.commit('setSchedule', schedule, index)
     },
-    deleteSchedule(index) {
-      this.$store.commit('deleteSchedule', index)
+    deleteSchedule(schedule, index) {
+      this.$store.commit('deleteSchedule', schedule, index)
     },
   },
 }
