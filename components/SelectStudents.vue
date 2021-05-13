@@ -21,12 +21,13 @@
 export default {
   computed: {
     Students() {
-      return this.$store.state.students
+      const Students = JSON.parse(JSON.stringify(this.$store.state.students))
+      return Students
     },
   },
   methods: {
-    setReserve(student, id) {
-      this.$store.commit('setReserved', student, id)
+    setReserve(student) {
+      this.$store.commit('setReserved', student)
     },
   },
 }

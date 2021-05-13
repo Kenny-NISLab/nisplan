@@ -22,10 +22,8 @@ export default {
     this.DeleteSchedule()
     this.setDB_Schedule(this.ReservedStudent)
   },
+  created() {},
   methods: {
-    setSchedule(student, index) {
-      this.$store.commit('setSchedule', student.schedule, index)
-    },
     DeleteSchedule() {
       this.$store.commit('deleteFullSchedule')
     },

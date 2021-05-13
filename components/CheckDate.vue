@@ -41,7 +41,6 @@ export default {
   methods: {
     isScheduled(plans, schedule) {
       if (plans[schedule]) this.checked = true
-      console.log(plans)
     },
     Checkflag(isChecked, schedule, index) {
       if (isChecked) {
