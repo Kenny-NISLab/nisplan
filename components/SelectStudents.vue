@@ -2,7 +2,7 @@
   <section class="fixed w-full flex justify-around flex-wrap mx-auto pt-12">
     <div v-for="(student, index) in Students" :key="index">
       <div class="mb-3 mx-2">
-        <button @click="setReserve(student)">
+        <button @click="setReserve(student, index)">
           <nuxt-link to="register/dates">
             <img
               :src="student.avatar"
@@ -25,8 +25,8 @@ export default {
     },
   },
   methods: {
-    setReserve(student) {
-      this.$store.commit('setReserved', student)
+    setReserve(student, id) {
+      this.$store.commit('setReserved', student, id)
     },
   },
 }
