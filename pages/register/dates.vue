@@ -5,17 +5,33 @@
     </div>
     <div class="bg-white w-full h-full mx-auto rounded-2xl">
       <StudentIcon />
-      <ListDates />
+      <ListDates :reserved="ReservedStudent.schedule" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  computed: {
+    ReservedStudent() {
+      return this.$store.state.reserved
+    },
+  },
   mounted() {
-    this.$store.dispatch('getStudents')
-    this.$store.dispatch('getCalendar')
     this.$store.commit('setCurrentPage', this.$route.path)
+    this.DeleteSchedule()
+    this.setDB_Schedule(this.ReservedStudent)
+  },
+  methods: {
+    setSchedule(student, index) {
+      this.$store.commit('setSchedule', student.schedule, index)
+    },
+    DeleteSchedule() {
+      this.$store.commit('deleteFullSchedule')
+    },
+    setDB_Schedule(student) {
+      this.$store.commit('setDB_Schedule', student.schedule)
+    },
   },
 }
 </script>
