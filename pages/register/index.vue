@@ -12,8 +12,6 @@
 <script>
 export default {
   mounted() {
-    this.$store.dispatch('getStudents')
-    this.$store.dispatch('getCalendar')
     this.$store.commit('setCurrentPage', this.$route.path)
   },
 }
