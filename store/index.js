@@ -1,20 +1,43 @@
 export const state = () => ({
   students: [],
+  schedule: [],
   calendar: [],
   reserved: [],
   currentPage: '',
 })
 
 export const mutations = {
+  // 全学生を格納
   setStudents(state, students) {
     state.students = students
   },
+  // チェックボックス付けた日付を格納
+  setSchedule(state, schedule, index) {
+    state.schedule.push(schedule)
+  },
+  // チェックボックスを外したら日付を削除
+  deleteSchedule(state, schedule, index) {
+    state.schedule.forEach((isSchedule, index) => {
+      if (isSchedule === schedule) state.schedule.splice(index, 1)
+    })
+  },
+  // 選択した学生のDBから受け取った予定を格納
+  setDB_Schedule(state, schedule) {
+    state.schedule = schedule
+  },
+  // スケジュールを全て削除
+  deleteFullSchedule(state) {
+    state.schedule.splice(0)
+  },
+  // カレンダー格納
   setCalendar(state, calendar) {
     state.calendar = calendar
   },
+  // 予約を行う生徒を格納
   setReserved(state, reserve) {
     state.reserved = reserve
   },
+  // 現在開いているページpath格納
   setCurrentPage(state, currentPage) {
     state.currentPage = currentPage
   },
@@ -38,6 +61,7 @@ export const actions = {
             j_first_name: 'Found',
             avatar: require('@/assets/images/defaultAvatar.jpg'),
             is_stay: false,
+            schedule: ['2021-05-13'],
           })
         )
       )
