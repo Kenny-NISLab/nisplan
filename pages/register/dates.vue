@@ -14,7 +14,6 @@
 export default {
   computed: {
     ReservedSchedule() {
-      if (!this.$store.state.reserved.schedule) this.$store.commit('setArray')
       return this.$store.state.reserved.schedule
     },
   },
