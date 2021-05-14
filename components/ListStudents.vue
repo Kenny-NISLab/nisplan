@@ -10,6 +10,7 @@
       <div class="flex justify-around flex-wrap w-11/12 mx-auto">
         <template v-for="(student, index) in Students">
           <Student
+            v-if="student.schedule.includes(day.schedule)"
             :id="student.id"
             :key="index"
             :index="index"
@@ -26,6 +27,11 @@
 export default {
   computed: {
     Students() {
+      this.$store.state.students.forEach((student, index) => {
+        if (!student.schedule) {
+          this.$store.commit('setArray', index)
+        }
+      })
       return this.$store.state.students
     },
     Calendar() {
