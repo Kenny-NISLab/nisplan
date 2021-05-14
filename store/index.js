@@ -29,13 +29,15 @@ export const mutations = {
   setReserved(state, reserve) {
     state.reserved = reserve
   },
-  setArray(state) {
-    state.reserved.schedule = []
+  // 配列の例外処理
+  setArray(state, index) {
+    state.students[index].schedule = []
   },
   // 現在開いているページpath格納
   setCurrentPage(state, currentPage) {
     state.currentPage = currentPage
   },
+  // 連想配列で学生の予定を管理
   setPlan(state, plans) {
     state.plans = plans
   },
