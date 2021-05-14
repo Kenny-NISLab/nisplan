@@ -1,5 +1,5 @@
 <template>
-  <button @click="SubmitSchedule">
+  <button @click="SubmitSchedule(Scheduled)">
     <nuxt-link to="/">
       <CheckSVG />
     </nuxt-link>
@@ -10,21 +10,21 @@ import axios from 'axios'
 export default {
   computed: {
     Scheduled() {
-      return this.$store.state.schedule
+      return this.$store.state.reserved
     },
   },
   methods: {
     getData() {
       this.$store.dispatch('getStudents')
     },
-    SubmitSchedule(id, Schedule) {
+    SubmitSchedule(Student) {
       if (!this.url.indexOf(this.$config.consoleUrl)) {
         this.loading = true
         axios
           .patch(
-            this.$config.apiUrl + '/students/' + id,
+            this.$config.apiUrl + '/students/' + Student.id,
             {
-              schedule: Schedule,
+              schedule: Student.schedule,
             },
             {
               headers: { 'x-api-key': this.$config.apiKey },

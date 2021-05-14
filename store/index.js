@@ -1,6 +1,5 @@
 export const state = () => ({
   students: [],
-  Dayschedule: [],
   calendar: [],
   reserved: [],
   plans: [],
@@ -13,22 +12,14 @@ export const mutations = {
     state.students = students
   },
   // チェックボックス付けた日付を格納
-  setSchedule(state, schedule, index) {
-    state.Dayschedule.push(schedule)
+  setSchedule(state, schedule) {
+    state.reserved.schedule.push(schedule)
   },
   // チェックボックスを外したら日付を削除
-  deleteSchedule(state, schedule, index) {
-    state.Dayschedule.forEach((isSchedule, index) => {
-      if (isSchedule === schedule) state.Dayschedule.splice(index, 1)
+  deleteSchedule(state, schedule) {
+    state.reserved.schedule.forEach((isSchedule, index) => {
+      if (isSchedule === schedule) state.reserved.schedule.splice(index, 1)
     })
-  },
-  // 選択した学生のDBから受け取った予定を格納
-  setDB_Schedule(state, schedule) {
-    state.Dayschedule = schedule
-  },
-  // スケジュールを全て削除
-  deleteFullSchedule(state) {
-    state.Dayschedule = null
   },
   // カレンダー格納
   setCalendar(state, calendar) {
@@ -37,6 +28,9 @@ export const mutations = {
   // 予約を行う生徒を格納
   setReserved(state, reserve) {
     state.reserved = reserve
+  },
+  setArray(state) {
+    state.reserved.schedule = []
   },
   // 現在開いているページpath格納
   setCurrentPage(state, currentPage) {

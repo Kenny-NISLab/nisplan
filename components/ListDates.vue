@@ -24,7 +24,7 @@ export default {
       return this.$store.state.calendar
     },
   },
-  mounted() {
+  created() {
     this.Plans()
   },
   methods: {
