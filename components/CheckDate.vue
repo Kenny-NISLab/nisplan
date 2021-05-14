@@ -41,15 +41,18 @@ export default {
   },
   methods: {
     isScheduled(plans, schedule) {
-      if (plans[schedule]) this.checked = true
+      if (plans[schedule]) {
+        this.checked = true
+        this.isChecked = true
+      }
     },
     Checkflag(isChecked, schedule, index) {
       if (isChecked) {
         this.isChecked = false
-        this.deleteSchedule(schedule, index)
+        this.deleteSchedule(schedule)
       } else {
         this.isChecked = true
-        this.setSchedule(schedule, index)
+        this.setSchedule(schedule)
       }
     },
     setSchedule(schedule, index) {
