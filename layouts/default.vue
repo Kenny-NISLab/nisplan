@@ -9,4 +9,11 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  mounted() {
+    this.$store.dispatch('getStudents')
+    this.$store.dispatch('getCalendar')
+  },
+}
+</script>
