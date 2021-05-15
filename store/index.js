@@ -4,6 +4,7 @@ export const state = () => ({
   reserved: [],
   plans: [],
   currentPage: '',
+  weather: [],
 })
 
 export const mutations = {
@@ -40,6 +41,9 @@ export const mutations = {
   // 連想配列で学生の予定を管理
   setPlan(state, plans) {
     state.plans = plans
+  },
+  setWeather(state, weather) {
+    state.weather = weather
   },
 }
 
@@ -78,5 +82,22 @@ export const actions = {
       }
     }
     commit('setCalendar', Array)
+  },
+  async getWeather({ commit }) {
+    const url =
+      this.$config.weather_apiUrl +
+      '?lat=34.8011257' +
+      '&lon=135.7684062' +
+      '&exclude=current,minutely,hourly,alerts&appid=' +
+      this.$config.weather_apiKey
+    await this.$axios
+      .get(url)
+      .then((res) => {
+        commit('setWeather', res.data.daily)
+        console.log(url)
+      })
+      .catch((er) => {
+        commit('setWeather', [])
+      })
   },
 }
