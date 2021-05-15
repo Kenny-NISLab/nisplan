@@ -170,5 +170,7 @@ export default {
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
     apiKey: process.env.API_KEY,
+    weather_apiUrl: process.env.WEATHER_URL,
+    weather_apiKey: process.env.WEATHER_KEY,
   },
 }
