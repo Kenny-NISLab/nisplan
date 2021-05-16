@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  mounted() {
+  created() {
     this.$store.dispatch('getWeather')
     this.$store.commit('setCurrentPage', this.$route.path)
   },
