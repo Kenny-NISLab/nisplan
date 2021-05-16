@@ -94,7 +94,6 @@ export const actions = {
       .get(url)
       .then((res) => {
         commit('setWeather', res.data.daily)
-        console.log(url)
       })
       .catch((er) => {
         commit('setWeather', [])

@@ -1,7 +1,7 @@
 <template>
-  <article>
+  <article class="w-3/6 mb-3">
     <div
-      class="inline-block mb-4 ml-2 rounded-full pr-7 h-8 line-height-username"
+      class="inline-block text-center rounded-full h-8 line-height-username min-w-full"
     >
       <img
         :src="avatar"

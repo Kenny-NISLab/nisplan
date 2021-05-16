@@ -2,12 +2,21 @@
   <section>
     <div v-for="(day, cnt) in Calendar" :key="cnt">
       <div class="flex justify-around py-8 text-3xl">
-        <h2 :id="day.days">
-          <strong>{{ day.months }}/{{ day.dates }} {{ day.days }}</strong>
+        <h2 :id="day.days" class="font-semibold">
+          {{ day.months }}/{{ day.dates }} {{ day.days }}
         </h2>
-        <h2>
-          <strong>{{}}</strong>
-        </h2>
+        <h3 v-if="Weather[0]" class="text-base">
+          <img
+            :src="`http://openweathermap.org/img/w/${Weather[cnt].weather[0].icon}.png`"
+            alt="wether"
+            class="inline-block"
+          />
+          <strong
+            >{{ Math.round(Weather[cnt].temp.max - 273.15) }}/{{
+              Math.round(Weather[cnt].temp.min - 273.15)
+            }}℃</strong
+          >
+        </h3>
       </div>
       <div class="flex justify-around flex-wrap w-11/12 mx-auto">
         <template v-for="(student, index) in Students">
@@ -22,52 +31,12 @@
         </template>
       </div>
     </div>
-    <h1>{{ Weather2[0] }}</h1>
+    <!-- <h1 v-if="Weather2[0]">{{ Weather2[0].temp.min }}</h1> -->
   </section>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      Weather: [
-        {
-          dt: 1621044000,
-          sunrise: 1621022047,
-          sunset: 1621072356,
-          moonrise: 1621029780,
-          moonset: 1621083900,
-          moon_phase: 0.1,
-          temp: {
-            day: 300.21,
-            min: 291.25,
-            max: 300.88,
-            night: 293.05,
-            eve: 295.44,
-            morn: 291.25,
-          },
-          feels_like: { day: 300.69, night: 291.33, eve: 295.27, morn: 291.33 },
-          pressure: 1015,
-          humidity: 51,
-          dew_point: 289.2,
-          wind_speed: 4.63,
-          wind_deg: 114,
-          wind_gust: 9.28,
-          weather: [
-            {
-              id: 804,
-              main: 'Clouds',
-              description: 'overcast clouds',
-              icon: '04d',
-            },
-          ],
-          clouds: 100,
-          pop: 0.36,
-          uvi: 7.22,
-        },
-      ],
-    }
-  },
   computed: {
     Students() {
       this.$store.state.students.forEach((student, index) => {
@@ -80,7 +49,7 @@ export default {
     Calendar() {
       return this.$store.state.calendar
     },
-    Weather2() {
+    Weather() {
       return this.$store.state.weather
     },
   },

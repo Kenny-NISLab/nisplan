@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  mounted() {
+  created() {
     this.$store.dispatch('getStudents')
     this.$store.dispatch('getCalendar')
   },
