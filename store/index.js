@@ -4,7 +4,17 @@ export const state = () => ({
   reserved: [],
   plans: [],
   currentPage: '',
-  weather: [],
+  weather: Array(7).fill({
+    temp: {
+      min: 290,
+      max: 300,
+    },
+    weather: [
+      {
+        icon: '04d',
+      },
+    ],
+  }),
 })
 
 export const mutations = {
