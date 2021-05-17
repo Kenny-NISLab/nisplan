@@ -5,7 +5,7 @@
         <h2 :id="day.days" class="font-semibold">
           {{ day.months }}/{{ day.dates }} {{ day.days }}
         </h2>
-        <h3 v-if="Weather[0]" class="text-base">
+        <h3 class="text-base">
           <img
             :src="`http://openweathermap.org/img/w/${Weather[cnt].weather[0].icon}.png`"
             alt="wether"
