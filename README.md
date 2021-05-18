@@ -11,6 +11,8 @@
 ```.env
 API_URL=
 API_KEY=
+WEATHER_KEY=
+WEATHER_URL=
 ```
 
 ## Build Setup
