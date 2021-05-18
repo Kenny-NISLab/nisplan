@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full fixed">
+  <div class="w-full h-full">
     <div class="sticky top-auto bg-gray-300">
       <TitleMessage message="When will you come?" />
     </div>
