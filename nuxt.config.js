@@ -48,6 +48,11 @@ export default {
         type: 'image/png',
         href: '/static/favicon-32x32.png',
       },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/static/favicon.ico',
+      },
     ],
     // pwa splash screens
     // Doc: https://appsco.pe/developer/splash-screens
