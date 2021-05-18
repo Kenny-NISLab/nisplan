@@ -1,6 +1,6 @@
 <template>
   <article>
-    <div class="h-8 flex items-center">
+    <div class="h-8 flex ml-6 items-center">
       <img
         :src="avatar"
         :alt="name + 'のプロフィール画像'"

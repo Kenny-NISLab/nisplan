@@ -5,7 +5,7 @@
     </div>
     <div
       ref="test"
-      class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll h-screen pb-32"
+      class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll h-screen test"
     >
       <PostIcon class="fixed bottom-0 right-0 p-8" />
       <ListStudents />
@@ -38,7 +38,7 @@ export default {
       const scroll = this.$refs.test.scrollTop
       let active = this.tempActive
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i <= 5; i++) {
         if (scroll < this.Offset[i + 1]) {
           active = i
           break
@@ -57,3 +57,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.test {
+  padding-bottom: calc(100vh - 7rem);
+}
+</style>
