@@ -175,9 +175,9 @@ export default {
   // loading: '~/components/Loading.vue',
 
   publicRuntimeConfig: {
-    apiUrl: process.env.API_URL,
-    apiKey: process.env.API_KEY,
-    weather_apiUrl: process.env.WEATHER_URL,
-    weather_apiKey: process.env.WEATHER_KEY,
+    apiUrl: process.env.NUXT_ENV_API_URL,
+    apiKey: process.env.NUXT_ENV_API_KEY,
+    weather_apiUrl: process.env.NUXT_ENV_WEATHER_URL,
+    weather_apiKey: process.env.NUXT_ENV_WEATHER_KEY,
   },
 }
