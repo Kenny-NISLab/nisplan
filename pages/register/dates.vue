@@ -18,7 +18,13 @@ export default {
     },
   },
   mounted() {
+    if (this.ReservedSchedule[0] === '') return this.Redirect()
     this.$store.commit('setCurrentPage', this.$route.path)
+  },
+  methods: {
+    Redirect() {
+      this.$router.push('/')
+    },
   },
 }
 </script>

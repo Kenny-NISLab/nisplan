@@ -1,7 +1,7 @@
 export const state = () => ({
   students: [],
   calendar: [],
-  reserved: [],
+  reserved: { schedule: [''] },
   plans: [],
   currentPage: '',
   weather: Array(7).fill({
