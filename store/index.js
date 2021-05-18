@@ -15,6 +15,8 @@ export const state = () => ({
       },
     ],
   }),
+  offset: [0, 0, 0, 0, 0, 0, 0],
+  activeDate: [true, false, false, false, false, false, false],
 })
 
 export const mutations = {
@@ -54,6 +56,15 @@ export const mutations = {
   },
   setWeather(state, weather) {
     state.weather = weather
+  },
+  setOffset(state, { offset, index }) {
+    state.offset[index] = offset
+  },
+  setActiveDate(state, active) {
+    for (const index in state.activeDate) {
+      state.activeDate.splice(index, 1, false)
+    }
+    state.activeDate.splice(active, 1, true)
   },
 }
 

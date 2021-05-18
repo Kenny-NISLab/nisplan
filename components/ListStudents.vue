@@ -1,13 +1,13 @@
 <template>
   <section>
-    <div v-for="(day, cnt) in Calendar" :key="cnt">
+    <div v-for="(day, cnt) in Calendar" ref="list" :key="cnt">
       <div class="flex justify-around py-8 text-3xl">
         <h2 :id="day.days" class="font-semibold">
           {{ day.months }}/{{ day.dates }} {{ day.days }}
         </h2>
         <h3 class="text-base">
           <img
-            :src="`http://openweathermap.org/img/w/${Weather[cnt].weather[0].icon}.png`"
+            :src="`http://openweathermap.org/img/wn/${Weather[cnt].weather[0].icon}.png`"
             alt="wether"
             class="inline-block"
           />
@@ -18,7 +18,9 @@
           >
         </h3>
       </div>
-      <div class="flex justify-around flex-wrap w-11/12 mx-auto">
+      <div
+        class="grid grid-cols-2 md:grid-cols-6 items-center w-11/12 mx-auto row-gap-2"
+      >
         <template v-for="(student, index) in Students">
           <Student
             v-if="student.schedule.includes(day.schedule)"
@@ -52,6 +54,18 @@ export default {
     Weather() {
       return this.$store.state.weather
     },
+  },
+  created() {
+    this.$store.dispatch('getWeather')
+    this.$store.commit('setCurrentPage', this.$route.path)
+  },
+  updated() {
+    for (const index in this.Calendar) {
+      this.$store.commit('setOffset', {
+        offset: this.$refs.list[index].offsetTop,
+        index,
+      })
+    }
   },
 }
 </script>
