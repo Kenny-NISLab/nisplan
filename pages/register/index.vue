@@ -1,9 +1,11 @@
 <template>
-  <div class="w-full h-full fixed">
-    <div class="sticky top-auto bg-gray-300">
+  <div class="w-full">
+    <div class="bg-gray-300">
       <TitleMessage message="Who are you?" />
     </div>
-    <div class="bg-white w-full h-full mx-auto rounded-2xl">
+    <div
+      class="bg-white w-full test fixed overflow-y-scroll pb-2 mx-auto rounded-2xl"
+    >
       <SelectStudents />
     </div>
   </div>
@@ -16,3 +18,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.test {
+  height: calc(100vh - 8rem);
+}
+</style>

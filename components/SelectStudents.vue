@@ -1,6 +1,6 @@
 <template>
   <section
-    class="fixed w-full overflow-y-scroll grid grid-cols-3 md:grid-cols-6 row-gap-4 md:row-gap-8 items-center justify-items-center mx-auto pt-12"
+    class="w-full grid grid-cols-3 md:grid-cols-6 row-gap-4 md:row-gap-8 items-center justify-items-center mx-auto pt-12"
   >
     <div v-for="(student, index) in Students" :key="index">
       <div class="mb-3 mx-2">

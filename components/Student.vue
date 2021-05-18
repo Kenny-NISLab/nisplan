@@ -1,14 +1,16 @@
 <template>
-  <article>
-    <div class="h-8 flex ml-6 items-center">
-      <img
-        :src="avatar"
-        :alt="name + 'のプロフィール画像'"
-        class="rounded-full h-full"
-      />
-      <span class="ml-4">{{ name }}</span>
-    </div>
-  </article>
+  <transition name="fade">
+    <article>
+      <div class="h-8 flex ml-6 items-center">
+        <img
+          :src="avatar"
+          :alt="name + 'のプロフィール画像'"
+          class="rounded-full h-full"
+        />
+        <span class="ml-4">{{ name }}</span>
+      </div>
+    </article>
+  </transition>
 </template>
 
 <script>
@@ -40,5 +42,14 @@ export default {
 <style scoped>
 .line-height-username {
   line-height: 2rem;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-enter-active {
+  transition: all 5s ease-out;
 }
 </style>
