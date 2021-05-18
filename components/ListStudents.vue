@@ -1,9 +1,10 @@
 <template>
   <section>
-    <div v-for="(day, cnt) in Calendar" ref="list" :key="cnt">
-      <div class="flex justify-around py-8 text-3xl">
+    <div v-for="(day, cnt) in Calendar" ref="list" :key="cnt" class="mb-8">
+      <div class="flex justify-around pt-8 pb-2 text-2xl">
         <h2 :id="day.days" class="font-semibold">
-          {{ day.months }}/{{ day.dates }} {{ day.days }}
+          {{ day.months }}/{{ day.dates }}
+          <span class="text-base">{{ day.days }}.</span>
         </h2>
         <h3 class="text-base">
           <img
@@ -19,7 +20,7 @@
         </h3>
       </div>
       <div
-        class="grid grid-cols-2 md:grid-cols-6 items-center w-11/12 mx-auto row-gap-2"
+        class="grid grid-cols-2 md:grid-cols-6 items-center w-5/6 mx-auto row-gap-4"
       >
         <template v-for="(student, index) in Students">
           <Student
