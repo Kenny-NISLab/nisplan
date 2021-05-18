@@ -30,24 +30,25 @@ export default {
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
     ],
-    // link: [
-    //   {
-    //     rel: 'apple-touch-icon',
-    //     sizes: '180x180',
-    //     href: '/static/apple-touch-icon.png',
-    //   },
-    //   {
-    //     rel: 'icon',
-    //     sizes: '16x16',
-    //     type: 'image/png',
-    //     href: '/static/favicon-16x16.png',
-    //   },
-    //   {
-    //     rel: 'icon',
-    //     sizes: '32x32',
-    //     type: 'image/png',
-    //     href: '/static/favicon-32x32.png',
-    //   },
+    link: [
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/static/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        sizes: '16x16',
+        type: 'image/png',
+        href: '/static/favicon-16x16.png',
+      },
+      {
+        rel: 'icon',
+        sizes: '32x32',
+        type: 'image/png',
+        href: '/static/favicon-32x32.png',
+      },
+    ],
     // pwa splash screens
     // Doc: https://appsco.pe/developer/splash-screens
     //     {
@@ -117,7 +118,7 @@ export default {
   css: [{ src: '~/assets/css/tailwind.css' }],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '~/plugins/vue-scrollto.ts' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
