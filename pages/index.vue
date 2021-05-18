@@ -1,9 +1,12 @@
 <template>
-  <div class="w-full h-screen">
+  <div class="w-full">
     <div class="bg-gray-300">
       <WeekCalendar />
     </div>
-    <div class="bg-white w-full mx-auto rounded-2xl h-full">
+    <div
+      ref="test"
+      class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll h-screen pb-32"
+    >
       <PostIcon class="fixed bottom-0 right-0 p-8" />
       <ListStudents />
     </div>
@@ -12,9 +15,45 @@
 
 <script>
 export default {
+  data() {
+    return {
+      scroll: 0,
+      tempActive: 0,
+    }
+  },
+  computed: {
+    Offset() {
+      return this.$store.state.offset
+    },
+  },
   created() {
     this.$store.dispatch('getWeather')
     this.$store.commit('setCurrentPage', this.$route.path)
+  },
+  mounted() {
+    this.$refs.test.addEventListener('scroll', this.scrollWindow)
+  },
+  methods: {
+    scrollWindow() {
+      const scroll = this.$refs.test.scrollTop
+      let active = this.tempActive
+
+      for (let i = 0; i < 5; i++) {
+        if (scroll < this.Offset[i + 1]) {
+          active = i
+          break
+        }
+      }
+
+      if (scroll >= this.Offset[6]) {
+        active = 6
+      }
+
+      if (this.tempActive !== active) {
+        this.$store.commit('setActiveDate', active)
+        this.tempActive = active
+      }
+    },
   },
 }
 </script>

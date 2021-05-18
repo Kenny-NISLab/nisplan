@@ -1,14 +1,12 @@
 <template>
-  <article class="w-3/6 mb-3">
-    <div
-      class="inline-block text-center rounded-full h-8 line-height-username min-w-full"
-    >
+  <article>
+    <div class="h-8 flex items-center">
       <img
         :src="avatar"
         :alt="name + 'のプロフィール画像'"
-        class="rounded-full float-left h-full"
+        class="rounded-full h-full"
       />
-      <span>{{ name }}</span>
+      <span class="ml-4">{{ name }}</span>
     </div>
   </article>
 </template>
