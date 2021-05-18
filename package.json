@@ -20,6 +20,7 @@
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.12",
     "sass-loader": "^10.1.0",
+    "vue-scrollto": "^2.20.0",
     "vuexfire": "^3.2.0-alpha.0"
   },
   "devDependencies": {
