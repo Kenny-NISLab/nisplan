@@ -1,13 +1,13 @@
 <template>
   <div class="w-full">
-    <div class="bg-gray-300">
+    <div>
       <WeekCalendar />
     </div>
     <div
       ref="test"
       class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll h-screen test"
     >
-      <PostIcon class="fixed bottom-0 right-0 p-8" />
+      <PostIcon class="fixed bottom-0 right-0 m-8" />
       <ListStudents />
     </div>
   </div>
