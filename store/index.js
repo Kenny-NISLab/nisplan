@@ -76,15 +76,16 @@ export const actions = {
       })
       .then((res) => {
         commit('setStudents', res.data.Items)
+        // this.dispatch('setArray')
       })
       .catch(
         commit(
           'setStudents',
           Array(23).fill({
             id: 0,
-            j_last_name: 'Not',
-            j_first_name: 'Found',
-            avatar: require('@/assets/images/defaultAvatar.jpg'),
+            j_last_name: '',
+            j_first_name: '',
+            avatar: null,
             is_stay: false,
             schedule: [],
           })
@@ -119,5 +120,12 @@ export const actions = {
       .catch((er) => {
         commit('setWeather', [])
       })
+  },
+  setArray({ commit }) {
+    state.students.forEach((student, index) => {
+      if (!student.schedule) {
+        commit('setArray', index)
+      }
+    })
   },
 }

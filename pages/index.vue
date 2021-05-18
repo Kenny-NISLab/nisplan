@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <div>
+    <div class="sticky top-auto">
       <WeekCalendar />
     </div>
     <div

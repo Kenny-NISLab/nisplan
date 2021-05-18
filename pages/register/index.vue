@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <div class="bg-gray-300">
+    <div class="bg-gray-300 sticky top-auto">
       <TitleMessage message="Who are you?" />
     </div>
     <div

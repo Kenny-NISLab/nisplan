@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-300 dark:bg-red-300 h-screen">
-    <div>
+    <div class="sticky top-0">
       <Header />
     </div>
     <main>
