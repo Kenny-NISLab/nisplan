@@ -1,6 +1,6 @@
 <template>
   <div>
-    <IndexWeekCalendar />
+    <IndexWeekCalendar class="stycky top-0 w-full" />
     <div
       ref="test"
       class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll test1 test"
