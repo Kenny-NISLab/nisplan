@@ -31,6 +31,9 @@ export default {
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
     ],
+    bodyAttrs: {
+      class: 'overscroll-none',
+    },
     link: [
       {
         rel: 'apple-touch-icon',
