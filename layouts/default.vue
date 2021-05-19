@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-300 dark:bg-red-300">
+  <div class="bg-gray-300 dark:bg-red-300 h-screen">
     <div class="stycky top-0 w-full">
       <CommonHeader />
     </div>
