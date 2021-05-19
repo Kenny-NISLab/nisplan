@@ -35,6 +35,14 @@ export default {
       this.theme = 'light'
       this.dark = false
     }
+    document.addEventListener('touchmove', this.handleTouchMove, {
+      passive: false,
+    })
+  },
+  methods: {
+    handleTouchMove(event) {
+      event.preventDefault()
+    },
   },
 }
 </script>
