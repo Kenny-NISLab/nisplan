@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <div class="bg-gray-300 sticky top-auto">
+    <div class="bg-gray-300">
       <CommonTitleMessage message="Who are you?" />
     </div>
     <div

@@ -2,7 +2,7 @@
   <div
     class="bg-gray-300 dark:bg-red-300 h-screen sticky top-0 overflow-hidden"
   >
-    <div class="sticky top-0">
+    <div>
       <CommonHeader />
     </div>
     <main>
