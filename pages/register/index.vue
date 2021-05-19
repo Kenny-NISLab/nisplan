@@ -13,6 +13,10 @@
 
 <script>
 export default {
+  async asyncData({ store }) {
+    await store.dispatch('getStudents')
+    await store.dispatch('getCalendar')
+  },
   mounted() {
     this.$store.commit('setCurrentPage', this.$route.path)
   },

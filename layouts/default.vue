@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="bg-gray-300 dark:bg-red-300 h-screen sticky top-0 overflow-hidden"
-  >
+  <div class="bg-gray-300 dark:bg-red-300 h-screen overflow-hidden">
     <div>
       <CommonHeader />
     </div>
@@ -13,15 +11,15 @@
 
 <script>
 export default {
+  // created() {
+  //   this.$store.dispatch('getStudents')
+  //   this.$store.dispatch('getCalendar')
+  // },
   data() {
     return {
       theme: 'light',
       dark: true,
     }
-  },
-  created() {
-    this.$store.dispatch('getStudents')
-    this.$store.dispatch('getCalendar')
   },
   mounted() {
     if (

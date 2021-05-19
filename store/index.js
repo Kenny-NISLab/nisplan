@@ -76,7 +76,7 @@ export const actions = {
       })
       .then((res) => {
         commit('setStudents', res.data.Items)
-        // this.dispatch('setArray')
+        this.dispatch('setArray')
       })
       .catch(
         commit(
@@ -117,12 +117,12 @@ export const actions = {
       .then((res) => {
         commit('setWeather', res.data.daily)
       })
-      .catch((er) => {
+      .catch(() => {
         commit('setWeather', [])
       })
   },
   setArray({ commit }) {
-    state.students.forEach((student, index) => {
+    this.state.students.forEach((student, index) => {
       if (!student.schedule) {
         commit('setArray', index)
       }
