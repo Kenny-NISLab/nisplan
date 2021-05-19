@@ -1,7 +1,9 @@
 <template>
-  <div class="bg-gray-300 dark:bg-red-300 h-screen">
-    <div class="sticky top-0">
-      <Header />
+  <div
+    class="bg-gray-300 dark:bg-red-300 h-screen sticky top-0 overflow-hidden"
+  >
+    <div>
+      <CommonHeader />
     </div>
     <main>
       <Nuxt />

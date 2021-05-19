@@ -1,11 +1,11 @@
 <template>
   <div class="w-full h-full">
-    <div class="sticky top-auto bg-gray-300">
-      <TitleMessage message="When will you come?" />
+    <div class="bg-gray-300">
+      <CommonTitleMessage message="When will you come?" />
     </div>
-    <div class="bg-white w-full h-full mx-auto rounded-2xl">
-      <StudentIcon />
-      <ListDates :reserved="ReservedSchedule" />
+    <div class="bg-white w-full h-screen overflow-hidden mx-auto rounded-2xl">
+      <DateStudentIcon />
+      <DateListDates :reserved="ReservedSchedule" />
     </div>
   </div>
 </template>

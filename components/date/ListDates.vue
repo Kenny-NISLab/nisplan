@@ -1,7 +1,7 @@
 <template>
-  <div class="text-center">
+  <div class="grid grid-cols-1 items-center justify-items-center">
     <div v-for="(day, index) in Calendar" :key="index">
-      <CheckDate :schedule="day.schedule" :index="index" />
+      <DateCheckDate :schedule="day.schedule" :index="index" />
     </div>
   </div>
 </template>

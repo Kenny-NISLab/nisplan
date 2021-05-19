@@ -1,12 +1,12 @@
 <template>
   <div class="w-full">
-    <div class="bg-gray-300 sticky top-auto">
-      <TitleMessage message="Who are you?" />
+    <div class="bg-gray-300">
+      <CommonTitleMessage message="Who are you?" />
     </div>
     <div
       class="bg-white w-full test fixed overflow-y-scroll pb-2 mx-auto rounded-2xl"
     >
-      <SelectStudents />
+      <RegisterSelectStudents />
     </div>
   </div>
 </template>

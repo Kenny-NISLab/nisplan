@@ -23,7 +23,7 @@
         class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 items-center w-5/6 mx-auto row-gap-4 md:row-gap-8"
       >
         <template v-for="(student, index) in Students">
-          <Student
+          <IndexStudent
             v-if="student.schedule.includes(day.schedule)"
             :id="student.id"
             :key="index"

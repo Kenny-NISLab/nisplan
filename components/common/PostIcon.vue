@@ -1,5 +1,5 @@
 <template>
   <nuxt-link to="register">
-    <PencilSVG />
+    <CommonSvgsPencilSVG />
   </nuxt-link>
 </template>

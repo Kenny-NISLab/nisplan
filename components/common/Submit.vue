@@ -1,7 +1,7 @@
 <template>
   <button @click="SubmitSchedule(Scheduled)">
     <nuxt-link to="/">
-      <CheckSVG />
+      <CommonSvgsCheckSVG />
     </nuxt-link>
   </button>
 </template>

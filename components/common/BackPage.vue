@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="getRoute">
-    <LeftArrowSVG />
+    <CommonSvgsLeftArrowSVG />
   </nuxt-link>
 </template>
 
