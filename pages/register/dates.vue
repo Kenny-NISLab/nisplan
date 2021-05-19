@@ -3,7 +3,9 @@
     <div class="bg-gray-300">
       <CommonTitleMessage message="When will you come?" />
     </div>
-    <div class="bg-white w-full h-screen overflow-hidden mx-auto rounded-2xl">
+    <div
+      class="bg-white w-full h-screen test fixed overflow-y-scroll pb-2 mx-auto rounded-2xl"
+    >
       <DateStudentIcon />
       <DateListDates :reserved="ReservedSchedule" />
     </div>
@@ -28,3 +30,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.test {
+  height: calc(100vh - 8rem);
+}
+</style>
