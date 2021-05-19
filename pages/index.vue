@@ -1,14 +1,14 @@
 <template>
-  <div class="w-full">
-    <div class="sticky top-auto">
-      <WeekCalendar />
+  <div>
+    <div>
+      <IndexWeekCalendar />
     </div>
     <div
       ref="test"
       class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll h-screen test"
     >
-      <PostIcon class="fixed bottom-0 right-0 m-8" />
-      <ListStudents />
+      <CommonPostIcon class="fixed bottom-0 right-0 m-8" />
+      <IndexListStudents />
     </div>
   </div>
 </template>
