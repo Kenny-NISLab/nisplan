@@ -1,8 +1,6 @@
 <template>
-  <div class="bg-gray-300 dark:bg-red-300 h-screen overflow-hidden">
-    <div>
-      <CommonHeader />
-    </div>
+  <div class="bg-gray-300 dark:bg-red-300">
+    <CommonHeader />
     <main>
       <Nuxt />
     </main>
