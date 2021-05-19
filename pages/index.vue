@@ -1,11 +1,9 @@
 <template>
   <div>
-    <div>
-      <IndexWeekCalendar />
-    </div>
+    <IndexWeekCalendar />
     <div
       ref="test"
-      class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll h-screen test"
+      class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll test1 test"
     >
       <CommonPostIcon class="fixed bottom-0 right-0 m-8" />
       <IndexListStudents />
@@ -64,5 +62,8 @@ export default {
 <style scoped>
 .test {
   padding-bottom: calc(100vh - 7rem);
+}
+.test1 {
+  height: calc(100vh - 8rem);
 }
 </style>
