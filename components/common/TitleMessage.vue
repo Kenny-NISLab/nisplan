@@ -13,5 +13,15 @@ export default {
       default: 'No Message',
     },
   },
+  mounted() {
+    document.addEventListener('touchmove', this.handleTouchMove, {
+      passive: false,
+    })
+  },
+  methods: {
+    handleTouchMove(event) {
+      event.preventDefault()
+    },
+  },
 }
 </script>

@@ -16,5 +16,15 @@ export default {
       return this.$store.state.calendar
     },
   },
+  mounted() {
+    document.addEventListener('touchmove', this.handleTouchMove, {
+      passive: false,
+    })
+  },
+  methods: {
+    handleTouchMove(event) {
+      event.preventDefault()
+    },
+  },
 }
 </script>
