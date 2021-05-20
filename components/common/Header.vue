@@ -1,5 +1,8 @@
 <template>
-  <header class="flex justify-between items-center h-16 container mx-auto">
+  <header
+    class="flex justify-between items-center h-16 container mx-auto"
+    @touchmove="touchMove"
+  >
     <h1 class="flex items-center h-full">
       <CommonBackPage v-show="getPage != '/'" class="absolute left-0 ml-2" />
     </h1>
@@ -32,13 +35,8 @@ export default {
       return this.$store.state.currentPage
     },
   },
-  mounted() {
-    document.addEventListener('touchmove', this.handleTouchMove, {
-      passive: false,
-    })
-  },
   methods: {
-    handleTouchMove(event) {
+    touchMove(event) {
       event.preventDefault()
     },
   },
