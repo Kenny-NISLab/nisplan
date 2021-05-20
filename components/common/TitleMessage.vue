@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center py-5 font-bold">
+  <div class="text-center py-5 font-bold" @touchmove="touchMove">
     <h2>{{ message }}</h2>
   </div>
 </template>
@@ -13,13 +13,8 @@ export default {
       default: 'No Message',
     },
   },
-  mounted() {
-    document.addEventListener('touchmove', this.handleTouchMove, {
-      passive: false,
-    })
-  },
   methods: {
-    handleTouchMove(event) {
+    touchMove(event) {
       event.preventDefault()
     },
   },
