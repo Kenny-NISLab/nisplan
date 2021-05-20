@@ -4,7 +4,7 @@
       <CommonTitleMessage message="When will you come?" />
     </div>
     <div
-      class="bg-white w-full h-screen test fixed overflow-y-scroll pb-4 mx-auto rounded-2xl"
+      class="bg-white w-full h-screen test fixed overflow-y-scroll pb-16 mx-auto rounded-2xl"
     >
       <DateStudentIcon />
       <DateListDates :reserved="ReservedSchedule" />

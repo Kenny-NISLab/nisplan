@@ -9,7 +9,7 @@
         <h3 class="text-base">
           <img
             :src="`http://openweathermap.org/img/wn/${Weather[cnt].weather[0].icon}.png`"
-            alt="wether"
+            alt="weather"
             class="inline-block"
           />
           <strong

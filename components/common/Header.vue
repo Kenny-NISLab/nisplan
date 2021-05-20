@@ -32,5 +32,15 @@ export default {
       return this.$store.state.currentPage
     },
   },
+  mounted() {
+    document.addEventListener('touchmove', this.handleTouchMove, {
+      passive: false,
+    })
+  },
+  methods: {
+    handleTouchMove(event) {
+      event.preventDefault()
+    },
+  },
 }
 </script>
