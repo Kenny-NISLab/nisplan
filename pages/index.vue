@@ -4,6 +4,7 @@
     <div
       ref="test"
       class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll h-screen test"
+      @touchmove="touchMove"
     >
       <CommonPostIcon class="fixed bottom-0 right-0 m-8" />
       <IndexListStudents />
@@ -55,6 +56,10 @@ export default {
         this.$store.commit('setActiveDate', active)
         this.tempActive = active
       }
+    },
+    touchMove(event) {
+      // event.preventDefault()
+      console.log(event.target)
     },
   },
 }
