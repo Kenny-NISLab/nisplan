@@ -34,12 +34,22 @@ export default {
     this.$store.commit('setCurrentPage', this.$route.path)
   },
   mounted() {
+    this.$refs.test.addEventListener('touchmove', this.touchMove)
     this.$refs.test.addEventListener('scroll', this.scrollWindow)
   },
   methods: {
     scrollWindow() {
-      const scroll = this.$refs.test.scrollTop
+      let scroll = this.$refs.test.scrollTop
+      const scrollheight = this.$refs.test.scrollHeight
+      const clientheight = this.$refs.test.clientHeight
+      scroll = 1
       let active = this.tempActive
+
+      if (scroll === 0) {
+        scroll = 1
+      } else if (scroll + clientheight === scrollheight) {
+        scroll = scroll - 1
+      }
 
       for (let i = 0; i <= 5; i++) {
         if (scroll < this.Offset[i + 1]) {
@@ -58,8 +68,14 @@ export default {
       }
     },
     touchMove(event) {
-      // event.preventDefault()
-      console.log(event.target)
+      let scrolltop = this.$refs.test.scrollTop
+      const scrollheight = this.$refs.test.scrollHeight
+      scrolltop = 1
+      if (scrolltop !== 0 && scrolltop + scrollheight !== scrollheight) {
+        event.stopPropagation()
+      } else {
+        event.preventDefault()
+      }
     },
   },
 }
