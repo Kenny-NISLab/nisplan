@@ -4,7 +4,10 @@
       <CommonTitleMessage message="Who are you?" />
     </div>
     <div
+      ref="test"
       class="bg-white w-full test fixed overflow-y-scroll pb-2 mx-auto rounded-2xl"
+      @touchmove="touchMove"
+      @touchend="touchEnd"
     >
       <RegisterSelectStudents />
     </div>
@@ -19,6 +22,17 @@ export default {
   },
   mounted() {
     this.$store.commit('setCurrentPage', this.$route.path)
+  },
+  methods: {
+    Redirect() {
+      this.$router.push('/')
+    },
+    touchMove(event) {
+      event.stopPropagation()
+    },
+    touchEnd(event) {
+      event.preventDefault()
+    },
   },
 }
 </script>
