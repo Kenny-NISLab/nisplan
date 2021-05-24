@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-gray-300 dark:bg-red-300 h-screen">
-    <div class="stycky top-0 w-full">
+  <div class="bg-gray-300 dark:bg-red-300">
+    <div class="bg-gray-300 fixed top-0 w-full w-full z-10">
       <CommonHeader />
     </div>
     <main>
@@ -35,14 +35,14 @@ export default {
       this.theme = 'light'
       this.dark = false
     }
-    document.addEventListener('touchmove', this.handleTouchMove, {
-      passive: false,
-    })
+    // document.addEventListener('touchmove', this.handleTouchMove, {
+    //   passive: false,
+    // })
   },
   methods: {
-    handleTouchMove(event) {
-      event.preventDefault()
-    },
+    // handleTouchMove(event) {
+    //   event.preventDefault()
+    // },
   },
 }
 </script>

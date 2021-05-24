@@ -1,10 +1,10 @@
 <template>
   <div>
-    <IndexWeekCalendar class="stycky top-0 w-full" />
+    <IndexWeekCalendar class="bg-gray-300 fixed sec-top w-full" />
+    <p class="h-32"></p>
     <div
       ref="test"
-      class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll h-screen test"
-      @touchmove="touchMove"
+      class="bg-white w-full h-cal mx-auto pb-cal rounded-2xl overflow-y-scroll"
     >
       <CommonPostIcon class="fixed bottom-0 right-0 m-8" />
       <IndexListStudents />
@@ -17,6 +17,7 @@ export default {
   async asyncData({ store }) {
     await store.dispatch('getStudents')
     await store.dispatch('getCalendar')
+    await store.dispatch('getWeather')
   },
   data() {
     return {
@@ -30,26 +31,15 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch('getWeather')
     this.$store.commit('setCurrentPage', this.$route.path)
   },
   mounted() {
-    this.$refs.test.addEventListener('touchmove', this.touchMove)
     this.$refs.test.addEventListener('scroll', this.scrollWindow)
   },
   methods: {
     scrollWindow() {
-      let scroll = this.$refs.test.scrollTop
-      const scrollheight = this.$refs.test.scrollHeight
-      const clientheight = this.$refs.test.clientHeight
-      scroll = 1
+      const scroll = this.$refs.test.scrollTop + 128
       let active = this.tempActive
-
-      if (scroll === 0) {
-        scroll = 1
-      } else if (scroll + clientheight === scrollheight) {
-        scroll = scroll - 1
-      }
 
       for (let i = 0; i <= 5; i++) {
         if (scroll < this.Offset[i + 1]) {
@@ -67,21 +57,17 @@ export default {
         this.tempActive = active
       }
     },
-    touchMove(event) {
-      let scrolltop = this.$refs.test.scrollTop
-      const scrollheight = this.$refs.test.scrollHeight
-      scrolltop = 1
-      if (scrolltop !== 0 && scrolltop + scrollheight !== scrollheight) {
-        event.stopPropagation()
-      } else {
-        event.preventDefault()
-      }
-    },
   },
 }
 </script>
 <style scoped>
-.test {
-  padding-bottom: calc(100vh - 7rem);
+.sec-top {
+  top: 64px;
+}
+.pb-cal {
+  padding-bottom: calc(100vh - 14rem);
+}
+.h-cal {
+  height: calc(100vh - 8rem);
 }
 </style>

@@ -9,7 +9,7 @@
             <img
               :src="student.avatar"
               :alt="student.name + 'のプロフィール画像'"
-              class="block rounded-lg w-10 mx-auto"
+              class="block rounded-full w-10 mx-auto"
             />
             <span>{{ student.j_last_name }} {{ student.j_first_name }}</span>
           </nuxt-link>

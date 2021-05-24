@@ -1,10 +1,11 @@
 <template>
   <div class="w-full">
-    <div class="bg-gray-300">
-      <CommonTitleMessage message="When will you come?" />
-    </div>
+    <CommonTitleMessage
+      message="When will you come?"
+      class="bg-gray-300 fixed sec-top w-full"
+    />
     <div
-      class="bg-white w-full test fixed overflow-y-scroll pb-2 mx-auto rounded-2xl"
+      class="bg-white w-full h-cal overflow-y-scroll mx-auto fixed thi-top pb-32 rounded-2xl"
     >
       <DateStudentIcon />
       <DateListDates :reserved="ReservedSchedule" />
@@ -31,7 +32,13 @@ export default {
 }
 </script>
 <style scoped>
-.test {
+.h-cal {
   height: calc(100vh - 8rem);
+}
+.sec-top {
+  top: 64px;
+}
+.thi-top {
+  top: 128px;
 }
 </style>

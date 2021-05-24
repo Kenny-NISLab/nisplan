@@ -1,13 +1,12 @@
 <template>
   <div class="w-full">
-    <div class="bg-gray-300">
-      <CommonTitleMessage message="Who are you?" />
-    </div>
+    <CommonTitleMessage
+      message="Who are you?"
+      class="bg-gray-300 fixed sec-top w-full z-30"
+    />
     <div
       ref="test"
-      class="bg-white w-full test fixed overflow-y-scroll pb-2 mx-auto rounded-2xl"
-      @touchmove="touchMove"
-      @touchend="touchEnd"
+      class="bg-white w-full h-cal overflow-y-scroll mx-auto mt-32 pb-16 rounded-2xl b-bg relative"
     >
       <RegisterSelectStudents />
     </div>
@@ -27,17 +26,23 @@ export default {
     Redirect() {
       this.$router.push('/')
     },
-    touchMove(event) {
-      event.stopPropagation()
-    },
-    touchEnd(event) {
-      event.preventDefault()
-    },
   },
 }
 </script>
 <style scoped>
-.test {
+.h-cal {
   height: calc(100vh - 8rem);
+}
+.sec-top {
+  top: 64px;
+}
+.b-bg::before {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: #e2e8f0;
+  @apply rounded-full;
 }
 </style>
