@@ -8,7 +8,7 @@
         </h2>
         <h3 class="text-base">
           <img
-            :src="`http://openweathermap.org/img/wn/${Weather[cnt].weather[0].icon}.png`"
+            :src="`https://openweathermap.org/img/wn/${Weather[cnt].weather[0].icon}.png`"
             alt="weather"
             class="inline-block"
           />
@@ -57,7 +57,6 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch('getWeather')
     this.$store.commit('setCurrentPage', this.$route.path)
   },
   updated() {
@@ -67,6 +66,14 @@ export default {
         index,
       })
     }
+  },
+  methods: {
+    // touchMove(event) {
+    //   event.stopPropagation()
+    // },
+    // touchEnd(event) {
+    //   event.preventDefault()
+    // },
   },
 }
 </script>
