@@ -39,6 +39,7 @@ export default {
   methods: {
     scrollWindow() {
       const scroll = this.$refs.test.scrollTop + 128
+      console.log(scroll)
       let active = this.tempActive
 
       for (let i = 0; i <= 5; i++) {
