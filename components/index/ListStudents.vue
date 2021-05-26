@@ -65,7 +65,10 @@ export default {
         offset: this.$refs.list[index].offsetTop,
         index,
       })
+      console.log('setoffset')
+      console.log(this.$refs.list[index].offsetTop)
     }
+    console.log('-------------------------------')
   },
   methods: {
     // touchMove(event) {
