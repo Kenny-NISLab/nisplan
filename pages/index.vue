@@ -39,10 +39,12 @@ export default {
   methods: {
     scrollWindow() {
       const scroll = this.$refs.test.scrollTop + 128
-      console.log(scroll)
+      // console.log(scroll)
       let active = this.tempActive
 
+      console.log('offset')
       for (let i = 0; i <= 5; i++) {
+        console.log(this.Offset[i + 1])
         if (scroll < this.Offset[i + 1]) {
           active = i
           break
@@ -50,8 +52,10 @@ export default {
       }
 
       if (scroll >= this.Offset[6]) {
+        console.log(this.Offset[6])
         active = 6
       }
+      console.log('-------------------------')
 
       if (this.tempActive !== active) {
         this.$store.commit('setActiveDate', active)
