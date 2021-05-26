@@ -1,9 +1,10 @@
 <template>
   <div>
-    <IndexWeekCalendar class="stycky top-0 w-full" />
+    <IndexWeekCalendar class="bg-gray-300 fixed sec-top w-full" />
+    <p class="h-32"></p>
     <div
       ref="test"
-      class="bg-white w-full mx-auto rounded-2xl fixed overflow-y-scroll h-screen test"
+      class="bg-white w-full h-cal mx-auto pb-cal rounded-2xl overflow-y-scroll"
     >
       <CommonPostIcon class="fixed bottom-0 right-0 m-8" />
       <IndexListStudents />
@@ -16,6 +17,7 @@ export default {
   async asyncData({ store }) {
     await store.dispatch('getStudents')
     await store.dispatch('getCalendar')
+    await store.dispatch('getWeather')
   },
   data() {
     return {
@@ -29,7 +31,6 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch('getWeather')
     this.$store.commit('setCurrentPage', this.$route.path)
   },
   mounted() {
@@ -37,7 +38,7 @@ export default {
   },
   methods: {
     scrollWindow() {
-      const scroll = this.$refs.test.scrollTop
+      const scroll = this.$refs.test.scrollTop + 128
       let active = this.tempActive
 
       for (let i = 0; i <= 5; i++) {
@@ -60,7 +61,13 @@ export default {
 }
 </script>
 <style scoped>
-.test {
-  padding-bottom: calc(100vh - 7rem);
+.sec-top {
+  top: 64px;
+}
+.pb-cal {
+  padding-bottom: calc(100vh - 14rem);
+}
+.h-cal {
+  height: calc(100vh - 8rem);
 }
 </style>

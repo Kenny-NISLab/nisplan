@@ -32,7 +32,7 @@ export default {
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
     ],
     bodyAttrs: {
-      class: 'overscroll-none',
+      class: 'overscroll-none bg-gray-300',
     },
     link: [
       {
