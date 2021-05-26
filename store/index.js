@@ -58,6 +58,7 @@ export const mutations = {
     state.weather = weather
   },
   setOffset(state, { offset, index }) {
+    console.log('hello')
     state.offset[index] = offset
   },
   setActiveDate(state, active) {
