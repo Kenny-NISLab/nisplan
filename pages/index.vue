@@ -14,7 +14,6 @@
 
 <script>
 export default {
-  async asyncData({ store }) {},
   data() {
     return {
       scroll: 0,

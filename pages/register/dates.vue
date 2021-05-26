@@ -5,7 +5,7 @@
       class="bg-gray-300 fixed sec-top w-full"
     />
     <div
-      class="bg-white w-full h-cal overflow-y-scroll mx-auto fixed thi-top pb-32 rounded-2xl"
+      class="bg-white w-full h-cal overflow-y-scroll mx-auto mt-32 pb-32 rounded-2xl"
     >
       <DateStudentIcon />
       <DateListDates :reserved="ReservedSchedule" />
