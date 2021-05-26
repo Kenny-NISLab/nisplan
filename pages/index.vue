@@ -14,11 +14,7 @@
 
 <script>
 export default {
-  async asyncData({ store }) {
-    await store.dispatch('getStudents')
-    await store.dispatch('getCalendar')
-    await store.dispatch('getWeather')
-  },
+  async asyncData({ store }) {},
   data() {
     return {
       scroll: 0,
@@ -31,6 +27,9 @@ export default {
     },
   },
   created() {
+    this.$store.dispatch('getStudents')
+    this.$store.dispatch('getCalendar')
+    this.$store.dispatch('getWeather')
     this.$store.commit('setCurrentPage', this.$route.path)
   },
   mounted() {
@@ -42,9 +41,7 @@ export default {
       // console.log(scroll)
       let active = this.tempActive
 
-      console.log('offset')
       for (let i = 0; i <= 5; i++) {
-        console.log(this.Offset[i + 1])
         if (scroll < this.Offset[i + 1]) {
           active = i
           break
@@ -52,11 +49,8 @@ export default {
       }
 
       if (scroll >= this.Offset[6]) {
-        console.log(this.Offset[6])
         active = 6
       }
-      console.log('-------------------------')
-
       if (this.tempActive !== active) {
         this.$store.commit('setActiveDate', active)
         this.tempActive = active

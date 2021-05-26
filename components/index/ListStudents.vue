@@ -59,16 +59,18 @@ export default {
   created() {
     this.$store.commit('setCurrentPage', this.$route.path)
   },
-  mounted() {
-    for (const index in this.Calendar) {
-      this.$store.commit('setOffset', {
-        offset: this.$refs.list[index].offsetTop,
-        index,
-      })
-      console.log('setoffset')
-      console.log(this.$refs.list[index].offsetTop)
-    }
-    console.log('-------------------------------')
+  updated() {
+    this.$nextTick(() => {
+      for (const index in this.Calendar) {
+        this.$store.commit('setOffset', {
+          offset: this.$refs.list[index].offsetTop,
+          index,
+        })
+        console.log('setoffset')
+        console.log(this.$refs.list[index].offsetTop)
+      }
+      console.log('-------------------------------')
+    })
   },
   methods: {
     // touchMove(event) {
