@@ -34,7 +34,6 @@
         </template>
       </div>
     </div>
-    <!-- <h1 v-if="Weather2[0]">{{ Weather2[0].temp.min }}</h1> -->
   </section>
 </template>
 
@@ -60,25 +59,12 @@ export default {
     this.$store.commit('setCurrentPage', this.$route.path)
   },
   updated() {
-    this.$nextTick(() => {
-      for (const index in this.Calendar) {
-        this.$store.commit('setOffset', {
-          offset: this.$refs.list[index].offsetTop,
-          index,
-        })
-        console.log('setoffset')
-        console.log(this.$refs.list[index].offsetTop)
-      }
-      console.log('-------------------------------')
-    })
-  },
-  methods: {
-    // touchMove(event) {
-    //   event.stopPropagation()
-    // },
-    // touchEnd(event) {
-    //   event.preventDefault()
-    // },
+    for (const index in this.Calendar) {
+      this.$store.commit('setOffset', {
+        offset: this.$refs.list[index].offsetTop,
+        index,
+      })
+    }
   },
 }
 </script>

@@ -155,22 +155,22 @@ export default {
   axios: {},
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
-  // pwa: {
-  //   manifest: {
-  //     lang: 'ja',
-  //     name: 'NISPLAN',
-  //     short_name: 'NISPLAN',
-  //     description: 'NISPLAN',
-  //     background_color: '#ffffff',
-  //     theme_color: '#e2844a',
-  //     display: 'standalone',
-  //     orientation: 'portrait',
-  //   },
-  // },
+  pwa: {
+    manifest: {
+      lang: 'ja',
+      name: 'NISPLAN',
+      short_name: 'NISPLAN',
+      description: 'NISPLAN',
+      background_color: '#ffffff',
+      theme_color: '#e2844a',
+      display: 'standalone',
+      orientation: 'portrait',
+    },
+  },
 
-  // icon: {
-  //   iconFileName: '/static/manifestIcon.png',
-  // },
+  icon: {
+    iconFileName: '/static/manifestIcon.png',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
