@@ -2,11 +2,11 @@
   <div class="w-full">
     <CommonTitleMessage
       message="Who are you?"
-      class="bg-gray-300 fixed sec-top w-full z-30"
+      class="bg-gray-300 fixed sec-top w-full"
     />
     <div
       ref="test"
-      class="bg-white w-full h-cal overflow-y-scroll mx-auto mt-32 pb-16 rounded-2xl b-bg relative"
+      class="bg-white w-full h-cal overflow-y-scroll mx-auto mt-32 rounded-2xl"
     >
       <RegisterSelectStudents />
     </div>
@@ -21,11 +21,6 @@ export default {
   },
   mounted() {
     this.$store.commit('setCurrentPage', this.$route.path)
-  },
-  methods: {
-    Redirect() {
-      this.$router.push('/')
-    },
   },
 }
 </script>

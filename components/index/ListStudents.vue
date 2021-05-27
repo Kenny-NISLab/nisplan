@@ -66,5 +66,22 @@ export default {
       })
     }
   },
+  // mounted() {
+  //   document.addEventListener('touchmove', this.handleTouchMove, {
+  //     passive: false,
+  //   })
+  // },
+  // methods: {
+  //   handleTouchMove(event) {
+  //     const header = document.querySelector('header')
+  //     console.log(document.querySelector('main'))
+  //     console.log(event.target)
+  //     if (event.targetTouches[0].clientY > 128 && event.target !== header) {
+  //       event.stopPropagation()
+  //     } else {
+  //       event.preventDefault()
+  //     }
+  //   },
+  // },
 }
 </script>

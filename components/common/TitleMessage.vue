@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center py-5 font-bold" @touchmove="touchMove">
+  <div class="text-center h-16 py-5 font-bold" @touchmove="touchMove">
     <h2>{{ message }}</h2>
   </div>
 </template>
