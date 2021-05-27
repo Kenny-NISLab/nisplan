@@ -1,9 +1,12 @@
 <template>
   <div>
-    <IndexWeekCalendar class="bg-gray-300 fixed sec-top w-full" />
+    <IndexWeekCalendar
+      :scroll="scrollMove"
+      class="bg-gray-300 fixed sec-top w-full"
+    />
     <p class="h-32"></p>
     <div
-      ref="test"
+      ref="listheight"
       class="bg-white w-full h-cal mx-auto pb-cal rounded-2xl overflow-y-scroll"
     >
       <CommonPostIcon class="fixed bottom-0 right-0 m-8" />
@@ -32,12 +35,11 @@ export default {
     this.$store.commit('setCurrentPage', this.$route.path)
   },
   mounted() {
-    this.$refs.test.addEventListener('scroll', this.scrollWindow)
+    this.$refs.listheight.addEventListener('scroll', this.scrollWindow)
   },
   methods: {
     scrollWindow() {
-      const scroll = this.$refs.test.scrollTop + 128
-      // console.log(scroll)
+      const scroll = this.$refs.listheight.scrollTop + 128
       let active = this.tempActive
 
       for (let i = 0; i <= 5; i++) {
@@ -54,6 +56,9 @@ export default {
         this.$store.commit('setActiveDate', active)
         this.tempActive = active
       }
+    },
+    scrollMove(index) {
+      this.$refs.listheight.scrollTop = this.Offset[index] - 128
     },
   },
 }
