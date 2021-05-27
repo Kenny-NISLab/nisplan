@@ -1,13 +1,13 @@
 <template>
   <div>
-    <a :href="'#' + day" class="text-center">
+    <button class="text-center" @click="scroll(index)">
       <span class="block text-xs mx-auto">{{ day }}</span>
       <span
         class="block w-6 rounded-full transition-all duration-500"
         :class="{ 'bg-primary': ActiveDate }"
         >{{ date }}</span
       >
-    </a>
+    </button>
   </div>
 </template>
 
@@ -28,6 +28,10 @@ export default {
       type: Number,
       required: true,
       default: 0,
+    },
+    scroll: {
+      type: Function,
+      required: true,
     },
   },
   computed: {
