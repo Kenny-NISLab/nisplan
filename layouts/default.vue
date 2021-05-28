@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-300 dark:bg-red-300">
-    <div class="bg-gray-300 fixed top-0 w-full w-full z-10">
+    <div class="bg-gray-300 fixed top-0 w-full">
       <CommonHeader />
     </div>
     <main>

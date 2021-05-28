@@ -22,7 +22,7 @@ export default {
     window.addEventListener('load', () => {
       setTimeout(() => {
         this.pageLoading = false
-      }, 150)
+      }, 1500)
     })
   },
 }
