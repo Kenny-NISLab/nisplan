@@ -36,4 +36,7 @@ export default {
 .pageLoading-leave-to {
   opacity: 0;
 }
+.max-h-64 {
+  max-width: 16rem;
+}
 </style>
