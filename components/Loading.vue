@@ -22,7 +22,7 @@ export default {
     window.addEventListener('load', () => {
       setTimeout(() => {
         this.pageLoading = false
-      }, 150)
+      }, 1500)
     })
   },
 }
@@ -35,5 +35,8 @@ export default {
 .pageLoading-enter,
 .pageLoading-leave-to {
   opacity: 0;
+}
+.max-h-64 {
+  max-width: 16rem;
 }
 </style>
