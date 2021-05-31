@@ -1,6 +1,8 @@
 export const state = () => ({
   students: [],
-  calendar: [],
+  calendar: Array(7).fill({
+    schedule: [''],
+  }),
   reserved: { schedule: [''] },
   plans: [],
   currentPage: '',
