@@ -42,6 +42,13 @@
 
 ---
 
+## <p align="center">Preview</p>
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/52265875/120301054-76c8f180-c307-11eb-8d7d-9f7448b1fd61.gif" alt="preview">
+</div>
+
+---
+
 ## For Developers
 
 ### How To Use Repository
