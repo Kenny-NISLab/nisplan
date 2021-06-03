@@ -2,10 +2,12 @@
   <section>
     <div v-for="(day, cnt) in Calendar" ref="list" :key="cnt" class="mb-8">
       <div class="flex justify-around pt-8 pb-2 text-2xl">
-        <h2 :id="day.days" class="font-semibold">
-          {{ day.months }}/{{ day.dates }}
-          <span class="text-base">{{ day.days }}.</span>
-        </h2>
+        <div>
+          <h2 :id="day.days" class="font-semibold text-left">
+            {{ day.months }}/{{ day.dates }}
+            <span class="text-base">{{ day.days }}.</span>
+          </h2>
+        </div>
         <h3 class="text-base">
           <img
             :src="`https://openweathermap.org/img/wn/${Weather[cnt].weather[0].icon}.png`"
@@ -20,7 +22,16 @@
         </h3>
       </div>
       <div
-        class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 items-center w-5/6 mx-auto row-gap-4 md:row-gap-8"
+        class="
+          grid grid-cols-2
+          md:grid-cols-4
+          lg:grid-cols-6
+          items-center
+          w-5/6
+          mx-auto
+          row-gap-4
+          md:row-gap-8
+        "
       >
         <template v-for="(student, index) in Students">
           <IndexStudent
