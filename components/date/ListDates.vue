@@ -1,7 +1,12 @@
 <template>
   <div class="grid grid-cols-1 items-center justify-items-center variant">
-    <div v-for="(day, index) in Calendar" :key="index">
-      <DateCheckDate :schedule="day.schedule" :index="index" />
+    <div>
+      <div v-for="(day, index) in Calendar" :key="index">
+        <DateCheckDate
+          :schedule="day.months + '/' + day.dates + ' ' + day.days + '.'"
+          :index="index"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -40,8 +45,3 @@ export default {
   },
 }
 </script>
-<style scoped>
-.variant {
-  font-variant-numeric: tabular-nums;
-}
-</style>
