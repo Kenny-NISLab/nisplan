@@ -3,8 +3,7 @@
     <div>
       <div v-for="(day, index) in Calendar" :key="index">
         <DateCheckDate
-          :schedule="day.schedule"
-          :days="day.months + '/' + day.dates + ' ' + day.days + '.'"
+          :schedule="day.months + '/' + day.dates + ' ' + day.days + '.'"
           :index="index"
         />
       </div>

@@ -35,7 +35,6 @@ export default {
     this.$store.commit('setCurrentPage', this.$route.path)
   },
   mounted() {
-    this.$store.commit('setActiveDate', 0)
     this.$refs.listheight.addEventListener('scroll', this.scrollWindow)
   },
   methods: {

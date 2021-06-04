@@ -3,22 +3,24 @@
     class="flex justify-between items-center h-16 container mx-auto"
     @touchmove="touchMove"
   >
-    <h1 class="flex items-center h-full">
+    <div role="button" class="flex items-center h-full">
       <CommonBackPage v-show="getPage != '/'" class="absolute left-0 ml-2" />
-    </h1>
+    </div>
     <h1>
-      <img
-        src="@/assets/images/NISPLAN.png"
-        alt="NISPLAN"
-        class="w-48 max-w-full"
-      />
+      <nuxt-link to="/">
+        <img
+          src="@/assets/images/NISPLAN.png"
+          alt="NISPLAN"
+          class="w-48 max-w-full"
+        />
+      </nuxt-link>
     </h1>
-    <h1 class="flex items-center h-full">
+    <div role="button" class="flex items-center h-full">
       <CommonSubmit
         v-show="getPage == '/register/dates'"
         class="absolute right-0 mr-2"
       />
-    </h1>
+    </div>
   </header>
 </template>
 
