@@ -6,7 +6,7 @@
     <h2 class="flex items-center h-full">
       <CommonBackPage v-show="getPage != '/'" class="absolute left-0 ml-2" />
     </h2>
-    <h1>
+    <div role="button">
       <nuxt-link to="/">
         <img
           src="@/assets/images/NISPLAN.png"
@@ -14,7 +14,7 @@
           class="w-48 max-w-full"
         />
       </nuxt-link>
-    </h1>
+    </div>
     <h2 class="flex items-center h-full">
       <CommonSubmit
         v-show="getPage == '/register/dates'"
