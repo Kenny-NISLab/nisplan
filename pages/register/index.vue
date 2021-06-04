@@ -18,6 +18,9 @@ export default {
   mounted() {
     this.$store.commit('setCurrentPage', this.$route.path)
   },
+  updated() {
+    this.$store.dispatch('getStudents')
+  },
 }
 </script>
 <style scoped>
