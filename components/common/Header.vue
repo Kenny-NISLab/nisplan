@@ -7,13 +7,13 @@
       <CommonBackPage v-show="getPage != '/'" class="absolute left-0 ml-2" />
     </div>
     <h1>
-      <nuxt-link to="/">
+      <a href="/">
         <img
           src="@/assets/images/NISPLAN.png"
           alt="NISPLAN"
           class="w-48 max-w-full"
         />
-      </nuxt-link>
+      </a>
     </h1>
     <div role="button" class="flex items-center h-full">
       <CommonSubmit
