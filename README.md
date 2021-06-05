@@ -44,7 +44,7 @@
 
 ## <p align="center">Preview</p>
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/52265875/120301054-76c8f180-c307-11eb-8d7d-9f7448b1fd61.gif" alt="preview">
+  <img src="https://user-images.githubusercontent.com/52265875/120877227-598a7080-c5f0-11eb-84d3-feff9e723aba.gif" alt="preview">
 </div>
 
 ---

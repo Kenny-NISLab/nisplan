@@ -7,7 +7,7 @@
         :v-model="isChecked"
         @change="Checkflag(isChecked, schedule, index)"
       />
-      <span class="text-xl">{{ schedule }}</span>
+      <span class="text-xl">{{ days }}</span>
     </label>
   </div>
 </template>
@@ -16,6 +16,11 @@
 export default {
   props: {
     schedule: {
+      type: String,
+      required: true,
+      default: null,
+    },
+    days: {
       type: String,
       required: true,
       default: null,
