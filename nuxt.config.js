@@ -149,6 +149,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    // https://google-analytics.nuxtjs.org
+    '@nuxtjs/google-analytics',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -182,5 +184,8 @@ export default {
     apiKey: process.env.NUXT_ENV_API_KEY,
     weather_apiUrl: process.env.NUXT_ENV_WEATHER_URL,
     weather_apiKey: process.env.NUXT_ENV_WEATHER_KEY,
+    googleAnalytics: {
+      id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_ID,
+    },
   },
 }
