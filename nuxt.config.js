@@ -141,6 +141,7 @@ export default {
     // https://go.nuxtjs.dev/moment
     '@nuxtjs/moment',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
