@@ -30,6 +30,7 @@ export default {
       // },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      { name: 'robots', content: 'noindex' },
     ],
     bodyAttrs: {
       class: 'overscroll-none bg-gray-300',
