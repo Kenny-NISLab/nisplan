@@ -19,6 +19,7 @@ export const state = () => ({
   }),
   offset: [0, 0, 0, 0, 0, 0, 0],
   activeDate: [true, false, false, false, false, false, false],
+  release: {},
 })
 
 export const mutations = {
@@ -67,6 +68,9 @@ export const mutations = {
       state.activeDate.splice(index, 1, false)
     }
     state.activeDate.splice(active, 1, true)
+  },
+  setRelease(state, release) {
+    state.release = release
   },
 }
 
@@ -128,6 +132,12 @@ export const actions = {
       if (!student.schedule) {
         commit('setArray', index)
       }
+    })
+  },
+  async getRelease({ commit }) {
+    const url = 'https://api.github.com/repos/Kenny-NISLab/nisplan/releases'
+    await this.$axios.get(url).then((res) => {
+      commit('setRelease', res.data[0])
     })
   },
 }

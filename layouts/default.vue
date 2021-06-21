@@ -11,15 +11,14 @@
 
 <script>
 export default {
-  // created() {
-  //   this.$store.dispatch('getStudents')
-  //   this.$store.dispatch('getCalendar')
-  // },
   data() {
     return {
       theme: 'light',
       dark: true,
     }
+  },
+  created() {
+    this.$store.dispatch('getRelease')
   },
   mounted() {
     if (
