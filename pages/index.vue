@@ -7,10 +7,13 @@
     <p class="h-32"></p>
     <div
       ref="listheight"
-      class="bg-white w-full h-cal mx-auto pb-cal rounded-2xl overflow-y-scroll"
+      class="bg-white w-full h-cal mx-auto rounded-2xl overflow-y-scroll"
     >
-      <CommonPostIcon class="fixed bottom-0 right-0 m-8" />
-      <IndexListStudents />
+      <div class="pb-cal">
+        <CommonPostIcon class="fixed bottom-0 right-0 m-8" />
+        <IndexListStudents />
+      </div>
+      <CommonFooter class="text-sm font-medium text-center pb-2" />
     </div>
   </div>
 </template>
@@ -69,7 +72,7 @@ export default {
   top: 64px;
 }
 .pb-cal {
-  padding-bottom: calc(100vh - 14rem);
+  padding-bottom: calc(100vh - 16rem);
 }
 .h-cal {
   height: calc(100vh - 8rem);

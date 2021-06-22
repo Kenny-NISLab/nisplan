@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-300 dark:bg-red-300">
+  <div class="bg-gray-300">
     <div class="bg-gray-300 fixed top-0 w-full">
       <CommonHeader />
     </div>
@@ -11,15 +11,14 @@
 
 <script>
 export default {
-  // created() {
-  //   this.$store.dispatch('getStudents')
-  //   this.$store.dispatch('getCalendar')
-  // },
   data() {
     return {
       theme: 'light',
       dark: true,
     }
+  },
+  created() {
+    this.$store.dispatch('getRelease')
   },
   mounted() {
     if (

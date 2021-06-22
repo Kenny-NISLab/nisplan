@@ -30,6 +30,7 @@ export default {
       // },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      { name: 'robots', content: 'noindex' },
     ],
     bodyAttrs: {
       class: 'overscroll-none bg-gray-300',
@@ -141,6 +142,7 @@ export default {
     // https://go.nuxtjs.dev/moment
     '@nuxtjs/moment',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
