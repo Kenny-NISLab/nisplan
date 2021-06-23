@@ -29,8 +29,8 @@
           items-center
           w-5/6
           mx-auto
-          row-gap-4
-          md:row-gap-8
+          gap-y-4
+          md:gap-y-8
         "
       >
         <template v-for="(student, index) in Students">
