@@ -69,7 +69,7 @@ export default {
   created() {
     this.$store.commit('setCurrentPage', this.$route.path)
   },
-  mounted() {
+  updated() {
     for (const index in this.Calendar) {
       this.$store.commit('setOffset', {
         offset: this.$refs.list[index].offsetTop,

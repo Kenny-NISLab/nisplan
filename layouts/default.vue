@@ -19,6 +19,9 @@ export default {
   },
   created() {
     this.$store.dispatch('getRelease')
+    this.$store.dispatch('getStudents')
+    this.$store.dispatch('getCalendar')
+    this.$store.dispatch('getWeather')
   },
   mounted() {
     if (
@@ -34,14 +37,6 @@ export default {
       this.theme = 'light'
       this.dark = false
     }
-    // document.addEventListener('touchmove', this.handleTouchMove, {
-    //   passive: false,
-    // })
-  },
-  methods: {
-    // handleTouchMove(event) {
-    //   event.preventDefault()
-    // },
   },
 }
 </script>
