@@ -20,6 +20,11 @@
 
 <script>
 export default {
+  async asyncData({ store }) {
+    await store.dispatch('getStudents')
+    await store.dispatch('getCalendar')
+    await store.dispatch('getWeather')
+  },
   data() {
     return {
       scroll: 0,
@@ -32,9 +37,6 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch('getStudents')
-    this.$store.dispatch('getCalendar')
-    this.$store.dispatch('getWeather')
     this.$store.commit('setCurrentPage', this.$route.path)
   },
   mounted() {
