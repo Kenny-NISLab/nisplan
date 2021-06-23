@@ -4,8 +4,8 @@
       w-full
       grid grid-cols-3
       md:grid-cols-6
-      row-gap-4
-      md:row-gap-8
+      gap-y-4
+      md:gap-y-8
       items-center
       justify-items-center
       mx-auto
