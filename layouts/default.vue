@@ -17,11 +17,12 @@ export default {
       dark: true,
     }
   },
-  created() {
+  beforeCreate() {
     this.$store.dispatch('getRelease')
     this.$store.dispatch('getStudents')
     this.$store.dispatch('getCalendar')
     this.$store.dispatch('getWeather')
+    this.$forceUpdate()
   },
   mounted() {
     if (
