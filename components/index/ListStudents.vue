@@ -52,11 +52,6 @@
 export default {
   computed: {
     Students() {
-      this.$store.state.students.forEach((student, index) => {
-        if (!student.schedule) {
-          this.$store.commit('setArray', index)
-        }
-      })
       return this.$store.state.students
     },
     Calendar() {
