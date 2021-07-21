@@ -17,14 +17,11 @@ export default {
       dark: true,
     }
   },
-  beforeCreate() {
+  async mounted() {
     this.$store.dispatch('getRelease')
-    this.$store.dispatch('getStudents')
     this.$store.dispatch('getCalendar')
-    this.$store.dispatch('getWeather')
-    this.$forceUpdate()
-  },
-  mounted() {
+    await this.$store.dispatch('getStudents')
+    await this.$store.dispatch('getWeather')
     if (
       localStorage.theme === 'dark' ||
       (!('theme' in localStorage) &&
